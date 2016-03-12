@@ -1,0 +1,40 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="page-header">
+    <h1>+ cuenta</h1>
+	</div>
+	
+	<form class="form-horizontal" name="ContactForm" nonvalidate ng-submit='addContact()'>
+           <div class="form-group">
+             <label for="nameContact" class="control-label col-md-2">Dueño:</label>
+                <div class="col-md-9">
+                  <input type="text" ng-model="nameContact" placeholder='nombre completo' class="form-control" name="name" required/><span class="validate" ng-show="ContactForm.name.$touched && ContactForm.name.$invalid" ng-enter>*Campo obligatorio</span>
+             
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="numeroTel" class="control-label col-md-2">Tipo:</label>
+				<div class="col-md-9">
+                 <select class="form-control" ng-model="accounts.value" ng-options="v for v in accounts.values">
+                 </select>    
+				</div>
+            </div>
+		    
+		    <div class="form-group">
+              <label for="numeroTel" class="control-label col-md-2">Moneda:</label>
+				<div class="col-md-9">
+                 <select class="form-control" ng-model="currency.value" ng-options="v for v in currency.values">
+                 </select>    
+				</div>
+            </div>
+		
+			
+        </form>
+
+       <div class="col-md-offset-8">
+		   <a  href="#/list" class="btn btn-danger">Cancel</a>
+		   <a href="#/list" class="btn btn-primary"  ng-click="addContact()" ng-disabled="ContactForm.name.$touched && ContactForm.name.$invalid">Add</a>
+        </div>
+       
+        </div>
+</div>

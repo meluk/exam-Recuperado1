@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AppContacts">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+	
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/list">Mi Cuenta</a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+      <li><a href="#/">Registro</a></li>
+      <li><a href="#/list">Resumen</a></li>
+    </ul>
+  </div>
+</nav>
+	
+	
+  <div ng-view>
+  </div>
+
+    <script src="util/jquery-2.1.4.js"></script>     
+    <script src="util/bootstrap.min.js"></script>
+    <script src="util/angular.min.js"></script>
+    <script type="text/javascript" src="util/angular-route.min.js"></script>
+    <script src="util/localStorageAngular.min.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/ListController.js"></script>
+    <script src="js/controllers/Detailcontrollers.js"></script>
+	<script src="js/controllers/Addcontroller.js"></script>
+	<script src="js/controllers/AddMoveController.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/serviceUser.js"></script>
+	<script src="js/services/serviceMove.js"></script>
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Directives -->
+	<script src="js/directives/angular.ngEnter.js"></script>
+
+</body>
+</html>
+
+

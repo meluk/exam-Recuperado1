@@ -1,0 +1,45 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="page-header">
+    <h1>+ movimiento</h1>
+	</div>
+	
+	<form class="form-horizontal" name="moveForm">
+           <div class="form-group">
+             <label for="dateMove" class="control-label col-md-2">Fecha:</label>
+                <div class="col-md-9">
+                  <input type="date" ng-model="dateMove" required max="{{CurrentDate | date:'dd-MM-yyyy'}}" class="form-control" name="date" /><span class="validate" ng-show="moveForm.date.$touched && moveForm.date.$invalid">*Campo obligatorio</span>
+					<span class="validate" ng-show="moveForm.date.$error.max">*La fecha no puede ser mayor a la fecha actual</span>
+                </div>
+            </div>
+		
+		    <div class="form-group">
+             <label for="amountMove" class="control-label col-md-2">Monto:</label>
+                <div class="col-md-9">
+                  <input type="number" ng-model="amountMove" class="form-control" name="amout" required/><span class="validate" ng-show="moveForm.amout.$touched && moveForm.amout.$invalid">*Campo obligatorio</span>
+                </div>
+            </div>
+		
+		   <div class="form-group">
+             <label for="detailMove" class="control-label col-md-2">Detalle:</label>
+                <div class="col-md-9">
+                  <input type="text" ng-model="detailMove" class="form-control" name="detail" required/><span class="validate" ng-show="moveForm.detail.$touched && moveForm.detail.$invalid">*Campo obligatorio</span>
+                </div>
+            </div>
+		
+		<div class="form-group">
+              <label for="numeroTel" class="control-label col-md-2">Tipo:</label>
+				<div class="col-md-9">
+                 <select class="form-control" ng-model="typeMove.value" ng-options="v for v in typeMove.values">
+                 </select>    
+				</div>
+            </div>
+			
+        </form>
+
+       <div class="col-md-offset-8">
+		   <a  href="#/list" class="btn btn-danger">Cancel</a>
+		   <a  href="#/list" class="btn btn-primary"  ng-click="addMove()" ng-disabled="moveForm.date.$touched && moveForm.date.$invalid || moveForm.amout.$touched && moveForm.amout.$invalid || moveForm.detail.$touched && moveForm.detail.$invalid">Add</a>
+        </div>
+        
+   
+</div>

@@ -1,0 +1,77 @@
+<div class="col-md-8 col-md-offset-2" ng-model="allMove">
+	    <div class="header">
+          <h2>Detalles
+		  <div class="col-md-3 pull-right">
+		   <a href="#/list" class="btn btn-info"><span class="glyphicon glyphicon-align-justify"></span></a>
+		   <a href="#/list" class="btn btn-danger"><span class="glyphicon glyphicon-remove" ng-click="deleteDetails(whichItem)"></span></a>
+			
+		  </div>
+			  </h2>
+			</div>
+   <hr>
+	
+	<!--table-->
+	<table class="table table-striped" ng-model="allMove">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Detalle</th>
+        <th>Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span ng-bind="allMove[whichItem].date  | date"></span></td>
+        <td>{{ allMove[whichItem].detail }}</td>
+        <td>{{ allMove[whichItem].amount  | currency }}</td>
+		  <td><span type="button" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-pencil"></span></td>
+      </tr>
+    </tbody>
+  </table>
+<!-- fin tabla -->
+	
+
+	
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"> Editar movimiento</h4>
+      </div>
+      <div class="modal-body">
+        
+		  <form class="form-horizontal" name="moveForm">
+                 <div class="form-group">
+             <label for="dateMove" class="control-label col-md-2">Fecha:</label>
+                <div class="col-md-9">
+                   <input type="date" class="form-control" id="newArrayInput" name="date" ng-model="newArray.value"
+       placeholder="yyyy-MM-dd" required/><span class="validate" ng-show="moveForm.date.$touched && moveForm.date.$invalid">*Campo obligatorio</span>
+                </div>
+            </div>
+		
+		   <div class="form-group">
+             <label for="detailMove" class="control-label col-md-2">Detalle:</label>
+                <div class="col-md-9">
+                  <input type="text" ng-model="newArray.detail" class="form-control" name="detail" required/><span class="validate" ng-show="moveForm.detail.$touched && moveForm.detail.$invalid">*Campo obligatorio</span>
+                </div>
+            </div>
+			
+        </form>
+        
+		 
+		  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"  ng-click="editar()" ng-disabled="moveForm.date.$touched && moveForm.date.$invalid || moveForm.amout.$touched && moveForm.amout.$invalid || moveForm.detail.$touched && moveForm.detail.$invalid">Editar</button>
+		   
+      </div>
+    </div>
+
+  </div>
+</div>
+	
+</div>
